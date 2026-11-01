@@ -1,0 +1,66 @@
+def validate_dna(dna):
+
+    valid_bases = "ATGC"
+
+    if dna == "":
+        return False
+
+    for base in dna:
+        if base not in valid_bases:
+            return False
+
+    return True
+
+
+def calculate_gc(dna):
+
+    gc = dna.count("G") + dna.count("C")
+    gc_content = (gc / len(dna)) * 100
+
+    return gc_content
+
+
+def get_complement(dna):
+
+    complement = ""
+
+    for base in dna:
+        if base == "A":
+            complement += "T"
+        elif base == "T":
+            complement += "A"
+        elif base == "G":
+            complement += "C"
+        elif base == "C":
+            complement += "G"
+
+    return complement
+
+
+def get_reverse_complement(dna):
+
+    complement = get_complement(dna)
+    return complement[::-1]
+
+
+def analyze_dna(dna):
+
+    if not validate_dna(dna):
+        print("Invalid or Empty DNA Sequence")
+        print("----------------")
+        return
+
+    print("DNA Sequence:", dna)
+    print("Sequence Length:", len(dna))
+    print("GC Content:", round(calculate_gc(dna), 2), "%")
+    print("Complement:", get_complement(dna))
+    print("Reverse Complement:", get_reverse_complement(dna))
+    print("----------------")
+
+
+# Testing
+analyze_dna("ATGC")
+analyze_dna("AATTGGCC")
+analyze_dna("GCGT")
+analyze_dna("ATGX")
+analyze_dna("")

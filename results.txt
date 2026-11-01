@@ -1,0 +1,24 @@
+DNA: ATGC
+Status: Valid DNA
+Sequence Length: 4
+GC Content: 50.0 %
+Complement: TACG
+Reverse Complement: GCAT
+----------------
+DNA: AATTGGCC
+Status: Valid DNA
+Sequence Length: 8
+GC Content: 50.0 %
+Complement: TTAACCGG
+Reverse Complement: GGCCAATT
+----------------
+DNA: GCGT
+Status: Valid DNA
+Sequence Length: 4
+GC Content: 75.0 %
+Complement: CGCA
+Reverse Complement: ACGC
+----------------
+DNA: ATGX
+Status: Invalid DNA
+----------------
